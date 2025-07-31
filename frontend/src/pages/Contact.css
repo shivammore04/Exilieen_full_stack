@@ -273,3 +273,24 @@
   margin-bottom: 20px;
   color: #ccc;
 }
+
+/* Add this to your Contact.css file */
+
+.error-message {
+  color: #ff3860; /* A bright red color for errors */
+  font-size: 0.8rem;
+  margin: -10px 0 10px 5px; /* Adjust spacing */
+  text-align: left;
+  width: 100%;
+}
+
+/* Make sure the form-group can handle the error message below the input */
+.contact-form .form-group {
+  flex-wrap: wrap;
+}
+
+.contact-form .form-group .error-message {
+    width: 50%; /* Make error take up half the width like the input */
+    padding-right: 10px;
+    box-sizing: border-box;
+}
