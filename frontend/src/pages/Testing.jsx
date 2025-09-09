@@ -8,7 +8,7 @@ import {
   FaUserAlt
 } from "react-icons/fa";
 
-const Traning = () => {
+const Testing = () => {
   return (
     <div className="training-section">
       <div className="training-container">
@@ -17,7 +17,7 @@ const Traning = () => {
 
         <div className="training-wrapper">
           <div className="training-left">
-            <h2>Training</h2>
+            <h2>Testing</h2>
             <p>
               As per requirement of stakeholders, students, researchers and
               entrepreneurs. We organise pre-designed as well as module-based
@@ -37,10 +37,7 @@ const Traning = () => {
               <li>Training Module On Quality Control Laboratory Analyst.</li>
             </ul>
 
-            <p>
-              To know our Training and other charges,{" "}
-              <a href="#">Phone</a> or <a href="#">Email Us</a>
-            </p>
+            
           </div>
 
           <div className="training-right">
@@ -86,4 +83,4 @@ const Traning = () => {
   );
 };
 
-export default Traning;
+export default Testing;
