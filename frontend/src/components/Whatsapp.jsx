@@ -2,7 +2,8 @@ import React from "react";
 import './WhatsApp.css'; // ✅ Capital W and A
 
 const WhatsApp = () => {
-  const phoneNumber = "917507872383";
+  const phoneNumber = "9423008651";
+
   const message = "Hello, I'm interested in learning more about your services.";
 
   return (

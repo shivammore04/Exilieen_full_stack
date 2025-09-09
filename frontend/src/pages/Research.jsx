@@ -30,7 +30,7 @@ const Research = () => {
           <div className="text-content">
             <h2>Research</h2>
             <p>
-              MIT CARS is having expertise in various portfolio and having strength
+              Exilieen Research Scientific Lab is having expertise in various portfolio and having strength
               of sophisticated instrumentation facilities coupled with dedicated
               team of experts.
             </p>
