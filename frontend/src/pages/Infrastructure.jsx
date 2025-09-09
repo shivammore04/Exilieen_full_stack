@@ -9,15 +9,15 @@ import "swiper/css/navigation";
 import "./Food.css";
 import { FaCheckCircle } from "react-icons/fa";
 
-import instrument1 from "../assets/instrumentation/instrumentation1.jpg";
-import instrument2 from "../assets/instrumentation/instrumentation2.jpg";
-import instrument3 from "../assets/instrumentation/instrumentation3.jpg";
-import instrument4 from "../assets/instrumentation/instrumentation4.jpg";
-import instrument5 from "../assets/instrumentation/instrumentation5.jpg";
-import instrument6 from "../assets/instrumentation/instrumentation6.jpg";
-import instrument7 from "../assets/instrumentation/instrumentation7.jpg";
-import instrument8 from "../assets/instrumentation/instrumentation8.jpg";
-import instrument9 from "../assets/instrumentation/instrumentation9.jpg";
+// import instrument1 from "../assets/instrumentation/instrumentation1.jpg";
+// import instrument2 from "../assets/instrumentation/instrumentation2.jpg";
+// import instrument3 from "../assets/instrumentation/instrumentation3.jpg";
+// import instrument4 from "../assets/instrumentation/instrumentation4.jpg";
+// import instrument5 from "../assets/instrumentation/instrumentation5.jpg";
+// import instrument6 from "../assets/instrumentation/instrumentation6.jpg";
+// import instrument7 from "../assets/instrumentation/instrumentation7.jpg";
+// import instrument8 from "../assets/instrumentation/instrumentation8.jpg";
+// import instrument9 from "../assets/instrumentation/instrumentation9.jpg";
 
 const instruments = [
   ["AAS", "HPLC with all detector", "Dust Sampler", "Spares & Acc. For WM-solar Radiation Sensor"],
@@ -29,17 +29,17 @@ const instruments = [
   ["ICP-OES", "", "", ""]
 ];
 
-const images = [
-  { src: instrument1, alt: "Lab Equipment 1" },
-  { src: instrument2, alt: "Lab Equipment 2" },
-  { src: instrument3, alt: "Lab Equipment 3" },
-  { src: instrument4, alt: "Lab Equipment 4" },
-  { src: instrument5, alt: "Lab Equipment 5" },
-  { src: instrument6, alt: "Lab Equipment 6" },
-  { src: instrument7, alt: "Lab Equipment 7" },
-  { src: instrument8, alt: "Lab Equipment 8" },
-  { src: instrument9, alt: "Lab Equipment 9" }
-];
+// const images = [
+//   { src: instrument1, alt: "Lab Equipment 1" },
+//   { src: instrument2, alt: "Lab Equipment 2" },
+//   { src: instrument3, alt: "Lab Equipment 3" },
+//   { src: instrument4, alt: "Lab Equipment 4" },
+//   { src: instrument5, alt: "Lab Equipment 5" },
+//   { src: instrument6, alt: "Lab Equipment 6" },
+//   { src: instrument7, alt: "Lab Equipment 7" },
+//   { src: instrument8, alt: "Lab Equipment 8" },
+//   { src: instrument9, alt: "Lab Equipment 9" }
+// ];
 
 const Infrastructure = () => {
   useEffect(() => {
@@ -57,7 +57,7 @@ const Infrastructure = () => {
       <div className="instrument-header" data-aos="zoom-in">
         <h2>Instrumentation</h2>
         <a href="#" className="instrument-link">
-          <FaCheckCircle className="check-icon" />
+          {/* <FaCheckCircle className="check-icon" /> */}
           Instrument List - Exilieen Scientific Research LLP
         </a>
       </div>
@@ -76,14 +76,14 @@ const Infrastructure = () => {
         ))}
       </div>
 
-      {/* Carousel Section */}
+      {/* Carousel Section
       <div className="ai-section" data-aos="fade-up">
         <h2 className="ai-title">Analytical Infrastructure</h2>
         <p className="ai-subtitle">
           We are equipped with a wide range of excellent testing facilities.
-        </p>
+        </p> */}
 
-        <Swiper
+        {/* <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           slidesPerView={4}
           spaceBetween={20}
@@ -101,9 +101,9 @@ const Infrastructure = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
       </div>
-    </div>
+    // </div>
   );
 };
 

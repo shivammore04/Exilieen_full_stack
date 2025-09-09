@@ -1,67 +1,54 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "./Testing.css";
-import testing from "../assets/testing/testing.jpg";
-import { FaClipboardList, FaHandshake, FaRegClock, FaUserAlt } from "react-icons/fa";
+import React from "react";
+import "./Training.css";
+import training from "../assets/traning/training.jpg";
+import {
+  FaClipboardList,
+  FaHandshake,
+  FaRegClock,
+  FaUserAlt
+} from "react-icons/fa";
 
-const Testing = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
-  }, []);
-
-  const facilities = [
-    "Soil Analysis.",
-    "Irrigation Water Analysis.",
-    "Plant & Leaf Analysis.",
-    "Fertilizer (Compost & Water Soluble) Analysis.",
-    "Drinking Water Analysis. (Portable Water)",
-    "Food Analysis.",
-    "Microbiological Sample Analysis. (Food Sample)",
-    "Industrial Water and Waste Water Analysis.",
-    "Microbiological Sample Analysis. (Water And Waste Water)",
-    "Ambient Air and Stack Monitoring Analysis.",
-    "Pesticide Detection.",
-    "Polymer Sample Analysis.",
-    "Pharmaceutical Sample Analysis.",
-    "GMO Analysis.",
-    "Heavy & Toxic Metal Analysis.",
-    "Other Tailor made Sample Analysis."
-  ];
-
+const Traning = () => {
   return (
-    <div className="testing-section">
-      {/* <div className="breadcrumb" data-aos="fade-in">
-        <span>Home &gt; Services &gt; Testing Facilities</span>
-      </div> */}
-
-      <div className="testing-container">
+    <div className="training-section">
+      <div className="training-container">
         <br />
-        <h1 className="section-title" data-aos="fade-up">Testing Facilities</h1>
+        <h1 className="section-title">Training Facilities</h1>
 
-        <div className="facilities-wrapper">
-          <div className="facilities-left" data-aos="fade-right">
-            <h2>Analytical Facilities</h2>
-            <ul className="facility-list">
-              {facilities.map((item, index) => (
-                <li key={index}>
-                  <span className="tick">✔</span> {item}
-                </li>
-              ))}
+        <div className="training-wrapper">
+          <div className="training-left">
+            <h2>Training</h2>
+            <p>
+              As per requirement of stakeholders, students, researchers and
+              entrepreneurs. We organise pre-designed as well as module-based
+              training programs at our centers with moderate charges.
+            </p>
+
+            <p>Following Training Modules are available:</p>
+            <ul className="training-list">
+              <li>Training Module On Soil And Water Analysis.</li>
+              <li>Training Module On Food Analysis.</li>
+              <li>Training Module On ICP/OES Operations.</li>
+              <li>Training Module On Handson HPLC Operations.</li>
+              <li>Training Module On Handson GCMS Operations.</li>
+              <li>Training Module On Water and Waste Water Analysis.</li>
+              <li>Training Module On Polluted Air Sample Analysis.</li>
+              <li>Training Module On Microbiology Sample Analysis.</li>
+              <li>Training Module On Quality Control Laboratory Analyst.</li>
             </ul>
+
+            <p>
+              To know our Training and other charges,{" "}
+              <a href="#">Phone</a> or <a href="#">Email Us</a>
+            </p>
           </div>
 
-          <div className="facilities-right" data-aos="fade-left">
-            <img src={testing} alt="Testing Facilities" />
+          <div className="training-right">
+            <img src={training} alt="Training Facility" />
           </div>
         </div>
 
-        <p className="note" data-aos="fade-up">
-          <strong>NOTE:</strong> All Parameters are <u>not</u> included under laboratory NABL approved scope.
-          For MIT CARS approved NABL parameter scope, please check the <a href="#">link</a>.
-        </p>
-
-        <div className="consultancy-stats" data-aos="fade-up">
+        <div className="consultancy-stats">
           <div className="stat-item">
             <span className="stat-number">14</span>
             <div className="stat-label">
@@ -79,10 +66,10 @@ const Testing = () => {
           </div>
 
           <div className="stat-item">
-            <span className="stat-number">0 lac</span>
+            <span className="stat-number">0 LAC</span>
             <div className="stat-label">
               <FaRegClock className="stat-icon" />
-              <div>SOIL HEALTH CARD Distributed</div>
+              <div>SOIL HEALTH CARDS</div>
             </div>
           </div>
 
@@ -99,4 +86,4 @@ const Testing = () => {
   );
 };
 
-export default Testing;
+export default Traning;

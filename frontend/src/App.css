@@ -1,14 +1,26 @@
-/* ===== GLOBAL RESET (add this at the very top) ===== */
-* {
+/* Universal Reset & Anti-Overflow */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+/* Apply core styles and overflow fix to all top-level containers */
+html,
+body,
+#root {
+  /* Core layout setup */
+  width: 100%;
+  
+  /* THE MOST IMPORTANT FIX: Prevents horizontal scrolling */
+  overflow-x: hidden;
+}
+
+/* Body-specific styles */
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  background: linear-gradient(to bottom, #0a0f1a, #050a12)
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #0a0f1a, #050a12);
+  color: #f0f4f8; /* Default text color for the entire site */
 }

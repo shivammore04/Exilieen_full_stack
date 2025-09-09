@@ -30,6 +30,9 @@ const Footer = () => {
         </div>
 
         <div className="footer-services">
+           <h3>Services </h3>
+
+          
           <Link to="/infrastructure">Infrastructure</Link>
           <Link to="/testing">Testing</Link>
           <Link to="/consultancy">Consultancy</Link>
@@ -58,19 +61,16 @@ const Footer = () => {
           BE BAJAJ HOS GURUKRUPA AP, AURANGABAD CITY - 431001, MAHARASHTRA
         </div>
         <div>
-          <i className="fas fa-phone-alt"></i> 011-9423008651
+          <i className="fas fa-phone-alt"></i> 0240-2987599
         </div>
         <div>
-          <i className="fas fa-envelope"></i> tejs.mahakal@gmail.com
+          <i className="fas fa-envelope"></i> deepakbornare@gmail.com
         </div>
       </div>
 
       <div className="footer-bottom">
         <p>
-          © 2025 Made with ❤️ by{" "}
-          <a href="https://github.com/tejsmahakal" target="_blank" rel="noreferrer">
-            <strong>Tejas Mahakal</strong>
-          </a>
+          Copyright &copy; {new Date().getFullYear()} Exilieen Scientific Research LLP. All Rights Reserved.
         </p>
       </div>
     </footer>

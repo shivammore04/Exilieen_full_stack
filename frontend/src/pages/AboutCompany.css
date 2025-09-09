@@ -7,6 +7,10 @@
   overflow-x: hidden;
   animation: fadeIn 1s ease;
 }
+.banner h1 {
+  color:#f99807;
+  text-align: center;
+}
 
 /* SECTION TITLE STYLE */
 .section-title,

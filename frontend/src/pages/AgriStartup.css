@@ -1,9 +1,7 @@
 /* ======== AgriStartup Page Styles ======== */
 .agristartup-container {
   padding: 100px 20px;
-  /* background: radial-gradient(ellipse at top, #1a1a1a, #0d0d0d); */
-      background: linear-gradient(to bottom, #0a0f1a, #050a12);
-
+  background: linear-gradient(to bottom, #0a0f1a, #050a12);
   color: #fff;
   font-family: 'Poppins', sans-serif;
 }
@@ -97,7 +95,18 @@
   padding: 0;
   color: #ccc;
   font-size: 1.05rem;
-  line-height: 2;
+  
+  /* === NEW CSS === */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px; /* Vertical and horizontal gap between items */
+}
+
+.agri-apply ul li {
+  /* === NEW CSS === */
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+  text-align: left;
 }
 
 .agri-apply ul li::before {

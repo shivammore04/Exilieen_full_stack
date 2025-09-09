@@ -30,21 +30,18 @@ const Traning = () => {
 
             <p>Following Training Modules are available:</p>
             <ul className="training-list">
-              <li>✔ Training Module On Soil And Water Analysis.</li>
-              <li>✔ Training Module On Food Analysis.</li>
-              <li>✔ Training Module On ICP/OES Operations.</li>
-              <li>✔ Training Module On Handson HPLC Operations.</li>
-              <li>✔ Training Module On Handson GCMS Operations.</li>
-              <li>✔ Training Module On Water and Waste Water Analysis.</li>
-              <li>✔ Training Module On Polluted Air Sample Analysis.</li>
-              <li>✔ Training Module On Microbiology Sample Analysis.</li>
-              <li>✔ Training Module On Quality Control Laboratory Analyst.</li>
+              <li> Training Module On Soil And Water Analysis.</li>
+              <li>Training Module On Food Analysis.</li>
+              <li> Training Module On ICP/OES Operations.</li>
+              <li>Training Module On Handson HPLC Operations.</li>
+              <li> Training Module On Handson GCMS Operations.</li>
+              <li> Training Module On Water and Waste Water Analysis.</li>
+              <li> Training Module On Polluted Air Sample Analysis.</li>
+              <li> Training Module On Microbiology Sample Analysis.</li>
+              <li> Training Module On Quality Control Laboratory Analyst.</li>
             </ul>
 
-            <p>
-              To know our Training and other charges,{" "}
-              <a href="#">Phone</a> or <a href="#">Email Us</a>
-            </p>
+           
           </div>
 
           <div className="training-right">

@@ -51,7 +51,7 @@ const AboutCompany = () => {
             and application.
           </p>
           <br />
-          <h3>TEAM</h3>
+          {/* <h3>TEAM</h3>
           <ul>
             <li>Mr. Tejas Mahakal - Founder</li>
             <li>Mr. Tejas Mahakal - CFO</li>
@@ -68,7 +68,7 @@ const AboutCompany = () => {
             <li>Mr. Tejas Mahakal - Microbiologist</li>
             <li>Mr. Tejas Mahakal - Microbiologist</li>
             <li>Mr. Tejas Mahakal - Lab Assistant</li>
-          </ul>
+          </ul> */}
         </div>
 
         <div className="sidebar">

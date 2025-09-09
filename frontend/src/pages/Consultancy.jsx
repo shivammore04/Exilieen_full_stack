@@ -10,6 +10,14 @@ import {
   FaClipboardList
 } from "react-icons/fa";
 
+// Array to hold your new text points
+const consultancyPoints = [
+  "Our consultancy services will provide you laboratory expertise to fulfill your product compliance as per regulatory norms.",
+  "We provide analytical R&D support to establish your product in the global market.",
+  "We support and undertake consultancy projects/research assignments from Govt./Private institutes, Students research assignments, and Individual product development work limited to our laboratory scope as per stakeholders' needs."
+];
+
+
 const Consultancy = () => {
   useEffect(() => {
     AOS.init({ duration: 1200, once: true });
@@ -17,20 +25,17 @@ const Consultancy = () => {
 
   return (
     <div className="consultancy-section">
-      {/* <div className="breadcrumb" data-aos="fade-in">
-        <span>Home &gt; Services &gt; Consultancy</span>
-      </div> */}
-
       <div className="consultancy-container">
         <br />
         <h1 className="section-title" data-aos="fade-up">Consultancy</h1>
 
         <div className="consultancy-content" data-aos="fade-up">
           <ul>
-            {[...Array(4)].map((_, idx) => (
+            {/* The placeholder loop is replaced with this new map */}
+            {consultancyPoints.map((point, idx) => (
               <li key={idx}>
                 <FaCheckCircle className="check-icon" />
-                We support and undertake consultancy projects research assignments from Govt. Private institutes, Students research assignments, Individual product development work limited to our laboratory scope as per stakeholders need.
+                {point}
               </li>
             ))}
           </ul>

@@ -46,18 +46,16 @@
 }
 
 .instrument-link {
-  /* display: inline-flex; */
-display:inline-block;
+  display:inline-block;
   align-items: center;
   margin-top: 10px;
-  color: #0aa39b;
+  color: #f4f7f7;
   font-weight: 500;
   text-decoration: none;
 }
 
 .instrument-link .check-icon {
   margin-right: 130px;
-  /* color: #00ffae; */
   display:hidden;
 }
 
@@ -69,6 +67,14 @@ display:inline-block;
   max-width: 1300px;
   margin: 0 auto;
 }
+
+/* --- ADDED THIS RULE --- */
+.instrument-grid ul {
+  list-style-type: none; /* Removes the default bullet points */
+  padding: 0;
+  margin: 0;
+}
+/* ---------------------- */
 
 .instrument-grid li {
   background: rgba(255, 255, 255, 0.04);

@@ -32,7 +32,7 @@ const Header = () => {
               <span>About</span>
               <ul className="dropdown-menu" onClick={closeMenu}>
                 <li><Link to="/about/company">About Company</Link></li>
-                <li><Link to="/about/experts">Experts</Link></li>
+                {/* <li><Link to="/about/experts">Experts</Link></li> */}
                 <li><Link to="/about/AgriStartup">AgriStartup</Link></li>
                 {/* AgriStartup */}
               </ul>
@@ -41,12 +41,13 @@ const Header = () => {
             <li className="dropdown">
               <span>Services</span>
               <ul className="dropdown-menu" onClick={closeMenu}>
-                <li><Link to="/infrastructure">Infrastructure</Link></li>
+                <li><Link to="/infrastructure">Instrumentation</Link></li>
                 <li><Link to="/testing">Testing</Link></li>
                 <li><Link to="/consultancy">Consultancy</Link></li>
                 <li><Link to="/research">Research</Link></li>
                 <li><Link to="/training">Training</Link></li>
-                <li><Link to ="/AnalyticalService">AnalyticalService</Link></li>
+                <li><Link to ="/AnalyticalService">Analytical Service   </Link></li>
+               
               </ul>
             </li>
             <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>

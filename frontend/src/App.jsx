@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react'; // useRef ko yahan se hata diya hai
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -39,11 +39,11 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        {/* Aapke saare routes yahan rahenge */}
         <Route path="/" element={<Home />} />
         <Route path="/about/company" element={<AboutCompany />} />
         <Route path="/about/experts" element={<Experts />} />
-                <Route path="/about/AgriStartup" element={<AgriStartup/>}/>
-
+        <Route path="/about/AgriStartup" element={<AgriStartup/>}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="/certificate" element={<Certificate />} />
         <Route path="/aboutcompany" element={<AboutCompany />} />
@@ -60,45 +60,18 @@ function AnimatedRoutes() {
 }
 
 function App() {
-  const cursorRef = useRef(null);
-
-  useEffect(() => {
-    const moveCursor = (e) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.left = `${e.clientX}px`;
-        cursorRef.current.style.top = `${e.clientY}px`;
-      }
-    };
-    window.addEventListener('mousemove', moveCursor);
-    return () => window.removeEventListener('mousemove', moveCursor);
-  }, []);
+  // Maine yahan se custom cursor ka useRef, useEffect, aur div हटा दिया है।
 
   return (
     <Router>
-      <ScrollToTop /> {/* ✅ Automatically scroll to top on route change */}
+      <ScrollToTop />
       <Header />
       <main style={{ padding: '20px' }}>
         <AnimatedRoutes />
       </main>
       <Footer />
       <Whatsapp />
-
-      <div
-        ref={cursorRef}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '20px',
-          height: '20px',
-          borderRadius: '50%',
-          backgroundColor: 'orange',
-          pointerEvents: 'none',
-          transform: 'translate(-50%, -50%)',
-          transition: 'transform 0.05s ease-out',
-          zIndex: 9999,
-        }}
-      ></div>
+      {/* Orange cursor wala div yahan se remove kar diya gaya hai */}
     </Router>
   );
 }

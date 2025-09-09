@@ -41,11 +41,13 @@ const Research = () => {
             </p>
             <p>
               Researchers can directly contact to MIT CARS for their research need
-              and support. <a href="#">Contact Us</a>
+              and support. 
+  
             </p>
             <p>
               We welcome quality, productive and object-oriented research projects
-              in associationship. <a href="#">Email</a>
+              in associationship. 
+             
             </p>
           </div>
           <div className="image-container">
