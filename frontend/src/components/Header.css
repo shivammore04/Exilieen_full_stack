@@ -21,7 +21,6 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-/* Glassmorphism effect on scroll */
 .main-header.scrolled {
   background-color: var(--bg-scrolled);
   backdrop-filter: blur(10px);
@@ -39,14 +38,11 @@
   justify-content: space-between;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-}
 .logo {
-  height: 120px;
+  height: 140px;
   object-fit: contain;
   transition: height var(--transition-speed) ease;
+  padding:25px;
 }
 .main-header.scrolled .logo {
   height: 100px;
@@ -74,6 +70,7 @@
   transition: color var(--transition-speed) ease;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
+
 .nav-links a::after,
 .nav-links span::after {
   content: '';
@@ -92,11 +89,6 @@
   transform: scaleX(1);
   transform-origin: left;
 }
-.main-header.scrolled .nav-links a,
-.main-header.scrolled .nav-links span {
-  color: var(--text-color-light);
-  text-shadow: none;
-}
 
 /* --- Desktop Dropdown Menu --- */
 .dropdown {
@@ -109,7 +101,6 @@
 }
 .dropdown-arrow {
   transition: transform var(--transition-speed) ease;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.7));
 }
 .dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
@@ -141,7 +132,6 @@
   color: var(--text-color-dark);
   text-shadow: none;
   display: block;
-  width: 100%;
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 .dropdown-menu li a:hover {
@@ -152,7 +142,21 @@
   display: none;
 }
 
-/* --- Hamburger Icon --- */
+/* --- FIX FOR SCROLLED DROPDOWN --- */
+.main-header.scrolled .dropdown-menu {
+  background: var(--bg-scrolled);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main-header.scrolled .dropdown-menu li a {
+  color: var(--text-color-light);
+}
+.main-header.scrolled .dropdown-menu li a:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color-dark);
+}
+
+/* --- Hamburger Icon & Overlay --- */
 .hamburger-icon {
   display: none;
   width: 28px;
@@ -160,7 +164,6 @@
   position: relative;
   z-index: 1001;
   cursor: pointer;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.7));
 }
 .hamburger-icon span {
   display: block;
@@ -177,9 +180,11 @@
 .hamburger-icon span:nth-child(1) { top: 0px; }
 .hamburger-icon span:nth-child(2) { top: 9px; }
 .hamburger-icon span:nth-child(3) { top: 18px; }
-.hamburger-icon.open span:nth-child(1) { top: 9px; transform: rotate(135deg); }
+
+/* Hamburger animation to 'X' */
+.hamburger-icon.open span:nth-child(1) { top: 9px; transform: rotate(135deg); background: var(--text-color-dark); }
 .hamburger-icon.open span:nth-child(2) { opacity: 0; left: -60px; }
-.hamburger-icon.open span:nth-child(3) { top: 9px; transform: rotate(-135deg); }
+.hamburger-icon.open span:nth-child(3) { top: 9px; transform: rotate(-135deg); background: var(--text-color-dark); }
 
 .menu-overlay {
   position: fixed;
@@ -189,69 +194,84 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
+  display: none;
+}
+.main-header.menu-is-open ~ .menu-overlay {
+  display: block;
 }
 
-/* --- Responsive Styles for Mobile --- */
+/* ==============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================== */
 @media (max-width: 992px) {
   .logo { height: 100px; }
   .main-header.scrolled .logo { height: 80px; }
   
-  /* Hide desktop links and show hamburger */
   .nav-links {
-    display: none;
-  }
-  .hamburger-icon {
-    display: block;
-  }
-  
-  /* Style the slide-out menu (which is also .nav-links) */
-  .header-container > .nav-links {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: min(70vw, 300px);
-    background: #0a0f1a;
+    background: #10141f; /* Dark background for menu */
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 15px;
-    padding: 20px 40px;
+    gap: 0; /* Remove gap for tighter list */
+    padding: 20px 0;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    display: flex; /* Overwrite the 'none' from above */
   }
 
-  .header-container > .nav-links.open {
+  .main-header .nav-links.open {
     transform: translateX(0);
   }
   
-  /* Styles for items inside mobile menu */
-  .nav-links li { width: 100%; text-align: left; }
+  .nav-links li { 
+    width: 100%;
+  }
   .nav-links a, .nav-links span {
     color: var(--text-color-light);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 15px 30px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-shadow: none;
   }
   .nav-links a::after, .nav-links span::after { display: none; }
   
-  /* Mobile Dropdown */
+  /* --- MOBILE ACCORDION DROPDOWN FIX --- */
   .dropdown-menu {
     position: static;
     opacity: 1;
     visibility: visible;
     transform: none;
     box-shadow: none;
-    padding: 10px 0 0 15px;
-    background: transparent;
+    padding: 0;
+    background: rgba(0,0,0,0.2);
     border-radius: 0;
     min-width: auto;
-    display: none;
-    margin-top: 10px;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
   }
-  .dropdown:focus-within .dropdown-menu { display: block; }
-  .dropdown-menu li a { color: #ccc; padding: 8px 0; font-size: 1rem; }
-  .dropdown-menu li a:hover { color: var(--primary-color); background: transparent; }
+  .dropdown-menu.expanded {
+    max-height: 500px; /* Reveal the menu */
+    padding: 10px 0;
+  }
+  .dropdown-menu li a { 
+    color: #ccc; 
+    padding: 10px 45px; /* Indented sub-items */
+    font-size: 1rem;
+  }
+  .dropdown-menu li a:hover { 
+    color: var(--primary-color);
+    background: transparent;
+  }
+  .hamburger-icon {
+    display: block;
+  }
 }
