@@ -38,15 +38,20 @@
   justify-content: space-between;
 }
 
+/* === LOGO FIX STARTS HERE === */
 .logo {
-  height: 140px;
+  height: 150px; /* Increased height for a bigger initial logo */
   object-fit: contain;
   transition: height var(--transition-speed) ease;
-  padding:25px;
+  /* Removed padding which was shrinking the logo */
+  margin-top: 30px;
 }
+
 .main-header.scrolled .logo {
-  height: 100px;
+  height: 65px; /* Perfect height for the scrolled header */
 }
+/* === LOGO FIX ENDS HERE === */
+
 
 /* --- Desktop Navigation Links --- */
 .nav-links {
@@ -180,12 +185,9 @@
 .hamburger-icon span:nth-child(1) { top: 0px; }
 .hamburger-icon span:nth-child(2) { top: 9px; }
 .hamburger-icon span:nth-child(3) { top: 18px; }
-
-/* Hamburger animation to 'X' */
 .hamburger-icon.open span:nth-child(1) { top: 9px; transform: rotate(135deg); background: var(--text-color-dark); }
 .hamburger-icon.open span:nth-child(2) { opacity: 0; left: -60px; }
 .hamburger-icon.open span:nth-child(3) { top: 9px; transform: rotate(-135deg); background: var(--text-color-dark); }
-
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -205,19 +207,22 @@
    ============================================== */
 @media (max-width: 992px) {
   .logo { height: 100px; }
-  .main-header.scrolled .logo { height: 80px; }
-  
+  /* === MOBILE LOGO FIX === */
+  .main-header.scrolled .logo { 
+    height: 60px; /* Adjusted scrolled height for mobile */
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: min(70vw, 300px);
-    background: #10141f; /* Dark background for menu */
+    background: #10141f;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 0; /* Remove gap for tighter list */
+    gap: 0;
     padding: 20px 0;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
     transform: translateX(100%);
@@ -227,8 +232,8 @@
   .main-header .nav-links.open {
     transform: translateX(0);
   }
-  
-  .nav-links li { 
+
+  .nav-links li {
     width: 100%;
   }
   .nav-links a, .nav-links span {
@@ -242,7 +247,7 @@
     text-shadow: none;
   }
   .nav-links a::after, .nav-links span::after { display: none; }
-  
+
   /* --- MOBILE ACCORDION DROPDOWN FIX --- */
   .dropdown-menu {
     position: static;
@@ -254,20 +259,20 @@
     background: rgba(0,0,0,0.2);
     border-radius: 0;
     min-width: auto;
-    max-height: 0; /* Hidden by default */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
   }
   .dropdown-menu.expanded {
-    max-height: 500px; /* Reveal the menu */
+    max-height: 500px;
     padding: 10px 0;
   }
-  .dropdown-menu li a { 
-    color: #ccc; 
-    padding: 10px 45px; /* Indented sub-items */
+  .dropdown-menu li a {
+    color: #ccc;
+    padding: 10px 45px;
     font-size: 1rem;
   }
-  .dropdown-menu li a:hover { 
+  .dropdown-menu li a:hover {
     color: var(--primary-color);
     background: transparent;
   }

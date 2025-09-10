@@ -185,15 +185,15 @@ const Contact = () => {
           {/* Right Column: Map */}
           <div className="contact-map-container">
             <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.750727637616!2d75.31550469999999!3d19.850497500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1753331263333!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Exilieen Scientific Research LLP Map"
-          ></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.811833772186!2d75.35858027499696!3d19.88998818149861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba28a5aaaaaab%3A0x3b1c1d812368146!2sEXILIEEN%20SCIENTIFIC%20RESEARCH%20LLP!5e0!3m2!1sen!2sin!4v1725960411648!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Exilieen Scientific Research LLP Map"
+            ></iframe>
           </div>
         </div>
         
