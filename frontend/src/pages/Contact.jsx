@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
 
-// --- SVG Icons for a cleaner look ---
+// --- SVG Icons for the new design ---
 const UserIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 );
@@ -17,6 +17,7 @@ const LocationIcon = () => (
 const PhoneIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
 );
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,13 +30,38 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    // Chatbase script loader
-    if (!document.getElementById("sw0k8zWg6nNPK7Hyq7-mt")) {
-      const script = document.createElement("script");
-      script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = "sw0k8zWg6nNPK7Hyq7-mt";
-      script.setAttribute("domain", "www.chatbase.co");
-      document.body.appendChild(script);
+    // Chatbase script loader (your latest version)
+    if (!document.getElementById("tANNUIDsQJsd7DBbPxt_Q")) {
+      const chatbaseScript = document.createElement("script");
+      chatbaseScript.innerHTML = `
+        (function(){
+          if(!window.chatbase || window.chatbase("getState") !== "initialized") {
+            window.chatbase = (...arguments) => {
+              if(!window.chatbase.q) { window.chatbase.q = [] }
+              window.chatbase.q.push(arguments)
+            };
+            window.chatbase = new Proxy(window.chatbase, {
+              get(target, prop) {
+                if(prop === "q") { return target.q }
+                return (...args) => target(prop, ...args)
+              }
+            })
+          }
+          const onLoad = function() {
+            const script = document.createElement("script");
+            script.src = "https://www.chatbase.co/embed.min.js";
+            script.id = "tANNUIDsQJsd7DBbPxt_Q";
+            script.domain = "www.chatbase.co";
+            document.body.appendChild(script);
+          };
+          if(document.readyState === "complete") {
+            onLoad();
+          } else {
+            window.addEventListener("load", onLoad);
+          }
+        })();
+      `;
+      document.body.appendChild(chatbaseScript);
     }
   }, []);
 
@@ -43,7 +69,6 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // --- Real-time validation logic ---
     let error = "";
     if (name === "name") {
       if (!value.trim()) error = "Name is required.";
@@ -104,7 +129,7 @@ const Contact = () => {
       <div className="contact-container">
         <h1 className="section-title">Get in Touch</h1>
         <p className="section-subtitle">
-            We're here to help and answer any question you might have. We look forward to hearing from you.
+          We're here to help and answer any question you might have. We look forward to hearing from you.
         </p>
         
         <div className="contact-grid-container">
@@ -130,7 +155,7 @@ const Contact = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="contact-form" noValidate>
-                <h3>Send Us a Message</h3>
+                <h3>Send Us A Message</h3>
                 <div className="input-wrapper">
                     <UserIcon />
                     <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
@@ -161,7 +186,7 @@ const Contact = () => {
           <div className="contact-map-container">
             <iframe
               title="Exilieen Scientific Research LLP Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.750727637616!2d75.31550469999999!3d19.850497500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1753331263333!5m2!1sen!2sin"
+              src="http://googleusercontent.com/maps/google.com/0"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: '550px' }}

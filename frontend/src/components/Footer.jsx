@@ -33,7 +33,7 @@ const Footer = () => {
            <h3>Services </h3>
 
           
-          <Link to="/infrastructure">Infrastructure</Link>
+          <Link to="/infrastructure">Instrumentation </Link>
           <Link to="/testing">Testing</Link>
           <Link to="/consultancy">Consultancy</Link>
           <Link to="/research">Research</Link>

@@ -24,9 +24,14 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
+  margin-bottom: 30px; /* Default space between sections */
   gap: 40px;
   flex-wrap: wrap;
+}
+
+/* This new class will forcefully override the margin */
+.no-margin-bottom {
+  margin-bottom: 0 !important;
 }
 
 .text-content {
@@ -47,16 +52,6 @@
   line-height: 1.8;
   margin-bottom: 12px;
   color: #e2e8f0;
-}
-
-.text-content a {
-  color: #00e6e6;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.text-content a:hover {
-  text-decoration: underline;
 }
 
 .image-container {
@@ -147,11 +142,15 @@
     align-items: center;
     text-align: center;
   }
+  
+  .section.reverse-on-mobile {
+    flex-direction: column-reverse;
+  }
 
   .text-content {
     text-align: left;
   }
-
+  
   .image-container img {
     max-width: 100%;
   }

@@ -77,17 +77,27 @@
   line-height: 1.5;
 }
 
-/* Apply Section */
+/* === UPDATED APPLY SECTION STARTS HERE === */
 .agri-apply {
   max-width: 900px;
   margin: 0 auto 80px;
+}
+
+/* This is the new container card */
+.apply-content-box {
+  background: rgba(255, 165, 0, 0.08);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .agri-apply h2 {
   font-size: 2rem;
   color: #ffa500;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .agri-apply ul {
@@ -95,24 +105,25 @@
   padding: 0;
   color: #ccc;
   font-size: 1.05rem;
-  
-  /* === NEW CSS === */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px 30px; /* Vertical and horizontal gap between items */
-}
-
-.agri-apply ul li {
-  /* === NEW CSS === */
-  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
   text-align: left;
 }
 
-.agri-apply ul li::before {
-  content: "🔸 ";
-  color: #ffa500;
+.agri-apply ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+
+/* Style for the new icons */
+.apply-icon {
+  color: #ffa500;
+  font-size: 1.2rem;
+}
+/* === UPDATED APPLY SECTION ENDS HERE === */
 
 /* Join Section */
 .agri-join {

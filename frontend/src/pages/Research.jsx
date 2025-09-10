@@ -18,15 +18,11 @@ const Research = () => {
 
   return (
     <div className="research-section">
-      {/* <div className="breadcrumb" data-aos="fade-in">
-        <span>Home &gt; Services &gt; Research</span>
-      </div> */}
-
       <div className="research-container">
-        <br />
         <h1 className="section-title" data-aos="fade-up">Research Facilities</h1>
 
-        <div className="section" data-aos="fade-up">
+        {/* The new "no-margin-bottom" class is added here */}
+        <div className="section no-margin-bottom" data-aos="fade-up">
           <div className="text-content">
             <h2>Research</h2>
             <p>
@@ -42,12 +38,10 @@ const Research = () => {
             <p>
               Researchers can directly contact to MIT CARS for their research need
               and support. 
-  
             </p>
             <p>
               We welcome quality, productive and object-oriented research projects
               in associationship. 
-             
             </p>
           </div>
           <div className="image-container">
@@ -55,7 +49,7 @@ const Research = () => {
           </div>
         </div>
 
-        <div className="section" data-aos="fade-up">
+        <div className="section reverse-on-mobile" data-aos="fade-up">
           <div className="text-content">
             <h2>On Going Research Projects</h2>
             <ul className="research-list">

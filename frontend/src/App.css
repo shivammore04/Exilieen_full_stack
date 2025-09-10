@@ -1,4 +1,3 @@
-/* Universal Reset & Anti-Overflow */
 *,
 *::before,
 *::after {
@@ -7,20 +6,18 @@
   box-sizing: border-box;
 }
 
-/* Apply core styles and overflow fix to all top-level containers */
+
 html,
 body,
 #root {
-  /* Core layout setup */
   width: 100%;
-  
-  /* THE MOST IMPORTANT FIX: Prevents horizontal scrolling */
   overflow-x: hidden;
 }
 
-/* Body-specific styles */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, #0a0f1a, #050a12);
-  color: #f0f4f8; /* Default text color for the entire site */
+  color: #f0f4f8; 
 }
+

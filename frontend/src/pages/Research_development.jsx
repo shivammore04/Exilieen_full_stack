@@ -33,6 +33,7 @@ const Research_development = () => {
       <div className="rnd-focus" data-aos="fade-up">
         <h2>Key Focus Areas</h2>
         <div className="focus-grid">
+          {/* ... (focus-card divs remain unchanged) ... */}
           <div className="focus-card">
             <FaSeedling className="focus-icon" />
             <h3>Soil Health & Fertility</h3>
@@ -85,21 +86,26 @@ const Research_development = () => {
         </ul>
       </div>
 
+      {/* UPDATED SECTION STARTS HERE */}
       <div className="rnd-goals" data-aos="zoom-in">
         <h2>Impact Goals</h2>
-        <p>
-          <FaRegLightbulb className="goal-icon" />
-          Boost agricultural innovation
-        </p>
-        <p>
-          <FaRegLightbulb className="goal-icon" />
-          Support farmer welfare
-        </p>
-        <p>
-          <FaRegLightbulb className="goal-icon" />
-          Contribute to sustainable development goals (SDGs)
-        </p>
+        <ul>
+          <li>
+            <FaRegLightbulb className="goal-icon" />
+            Boost agricultural innovation
+          </li>
+          <li>
+            <FaRegLightbulb className="goal-icon" />
+            Support farmer welfare
+          </li>
+          <li>
+            <FaRegLightbulb className="goal-icon" />
+            Contribute to sustainable development goals (SDGs)
+          </li>
+        </ul>
       </div>
+      {/* UPDATED SECTION ENDS HERE */}
+      
     </div>
   );
 };

@@ -94,22 +94,35 @@
 }
 
 .rnd-goals {
-  max-width: 900px; /* Constrains the width */
-  margin: 50px auto 0; /* Centers the block and adds top margin */
+  max-width: 900px;
+  margin: 50px auto 0;
 }
 
 .rnd-goals h2 {
   text-align: center;
 }
 
-.rnd-goals p {
+/* UPDATED AND NEW STYLES START HERE */
+
+.rnd-goals ul {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+}
+
+.rnd-goals li {
   font-size: 1rem;
   margin: 10px 0;
-  display: flex; /* Enables flexbox for alignment */
-  align-items: center; /* Vertically aligns icon and text */
-  gap: 12px; /* Creates space between icon and text */
-  text-align: left; /* Aligns text to the left */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff22;
 }
+
+/* UPDATED AND NEW STYLES END HERE */
 
 .goal-icon {
   color: #fca311;
@@ -132,7 +145,7 @@
     font-size: 2rem;
   }
 
-  .rnd-goals p {
+  .rnd-goals li { /* Changed from .rnd-goals p */
     font-size: 0.95rem;
   }
 

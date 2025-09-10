@@ -28,7 +28,7 @@ const Traning = () => {
               training programs at our centers with moderate charges.
             </p>
 
-            <p>Following Training Modules are available:</p>
+            <p>Following Training Modules are Available:</p>
             <ul className="training-list">
               <li> Training Module On Soil And Water Analysis.</li>
               <li>Training Module On Food Analysis.</li>

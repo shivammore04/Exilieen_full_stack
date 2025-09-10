@@ -23,7 +23,7 @@
   text-transform: uppercase;
   margin-bottom: 15px;
   text-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
-  padding:30px
+  padding: 30px;
 }
 
 .section-subtitle {
@@ -222,7 +222,7 @@
   .chatbot-box h3 {
     font-size: 1.6rem;
   }
-   .chatbot-box p {
+    .chatbot-box p {
     font-size: 1rem;
   }
   .contact-map-container {
