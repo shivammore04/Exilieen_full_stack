@@ -184,16 +184,7 @@ const Contact = () => {
 
           {/* Right Column: Map */}
           <div className="contact-map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.750608764809!2d75.31292977468404!3d19.85050252720344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1757498970054!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Exilieen Scientific Research LLP Map"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7505.501431629323!2d75.31550500000002!3d19.850498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1757584686835!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         

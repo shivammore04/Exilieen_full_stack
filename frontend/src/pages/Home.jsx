@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react"; // Import useEffect
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -58,6 +58,43 @@ const Card = ({ image, title, description, alt }) => (
 
 const Home = () => {
   const navigate = useNavigate();
+
+  // --- CHATBOT SCRIPT ADDED HERE ---
+  useEffect(() => {
+    // Chatbase script loader
+    if (!document.getElementById("tANNUIDsQJsd7DBbPxt_Q")) {
+      const chatbaseScript = document.createElement("script");
+      chatbaseScript.innerHTML = `
+        (function(){
+          if(!window.chatbase || window.chatbase("getState") !== "initialized") {
+            window.chatbase = (...arguments) => {
+              if(!window.chatbase.q) { window.chatbase.q = [] }
+              window.chatbase.q.push(arguments)
+            };
+            window.chatbase = new Proxy(window.chatbase, {
+              get(target, prop) {
+                if(prop === "q") { return target.q }
+                return (...args) => target(prop, ...args)
+              }
+            })
+          }
+          const onLoad = function() {
+            const script = document.createElement("script");
+            script.src = "https://www.chatbase.co/embed.min.js";
+            script.id = "tANNUIDsQJsd7DBbPxt_Q";
+            script.domain = "www.chatbase.co";
+            document.body.appendChild(script);
+          };
+          if(document.readyState === "complete") {
+            onLoad();
+          } else {
+            window.addEventListener("load", onLoad);
+          }
+        })();
+      `;
+      document.body.appendChild(chatbaseScript);
+    }
+  }, []); // The empty array ensures this effect runs only once when the component mounts
 
   return (
     <div className="home">
