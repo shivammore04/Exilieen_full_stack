@@ -110,8 +110,6 @@
     text-align: center;
   }
   
-  /* === CHANGE IS HERE === */
-  /* This new rule centers the logo and its content on mobile */
   .footer-brand {
     display: flex;
     flex-direction: column;

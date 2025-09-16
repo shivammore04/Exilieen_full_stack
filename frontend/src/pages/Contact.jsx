@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Removed unused useEffect import
+import React, { useState } from "react";
 import "./Contact.css";
 
 // --- SVG Icons for the new design ---
@@ -28,8 +28,6 @@ const Contact = () => {
 
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
-
-  // --- CHATBOT SCRIPT WAS REMOVED FROM HERE ---
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,7 +69,8 @@ const Contact = () => {
 
     setStatus("Sending...");
     try {
-      const response = await fetch("https://exilieen-full-stack.onrender.com/contact", {
+      // --- THIS IS THE UPDATED LINE ---
+      const response = await fetch("http://localhost:5000/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -154,8 +153,6 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* --- CHATBOT INFO BOX WAS REMOVED FROM HERE --- */}
-
       </div>
     </div>
   );

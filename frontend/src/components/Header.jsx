@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/header/logo.png';
 
-// An animated hamburger icon component
 const HamburgerIcon = ({ isOpen, ...props }) => (
   <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} {...props}>
     <span></span>
@@ -12,7 +11,6 @@ const HamburgerIcon = ({ isOpen, ...props }) => (
   </div>
 );
 
-// Dropdown arrow component
 const DropdownArrow = () => (
     <svg className="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="6 9 12 15 18 9"></polyline>
@@ -22,16 +20,13 @@ const DropdownArrow = () => (
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // NEW: State to manage which dropdown is open in mobile view
   const [openDropdown, setOpenDropdown] = useState(null); 
   const location = useLocation();
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -40,17 +35,15 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
   }, [menuOpen]);
 
-  // NEW: Function to toggle dropdowns in mobile view
   const handleDropdownToggle = (dropdownName) => {
     if (openDropdown === dropdownName) {
-      setOpenDropdown(null); // Close it if it's already open
+      setOpenDropdown(null); 
     } else {
-      setOpenDropdown(dropdownName); // Open the clicked one
+      setOpenDropdown(dropdownName); 
     }
   };
 
@@ -66,11 +59,11 @@ const Header = () => {
             <li><Link to="/">Home</Link></li>
             
             <li className="dropdown">
-              {/* UPDATED: Added onClick for mobile */}
+              
               <span onClick={() => handleDropdownToggle('about')}>
                 About <DropdownArrow />
               </span>
-              {/* UPDATED: Conditional class for mobile accordion */}
+              
               <ul className={`dropdown-menu ${openDropdown === 'about' ? 'expanded' : ''}`}>
                 <li><Link to="/about/company">About Company</Link></li>
                 <li><Link to="/about/AgriStartup">AgriStartup</Link></li>
@@ -80,11 +73,11 @@ const Header = () => {
             <li><Link to="/Research_development">R&D</Link></li>
 
             <li className="dropdown">
-              {/* UPDATED: Added onClick for mobile */}
+             
               <span onClick={() => handleDropdownToggle('services')}>
                 Services <DropdownArrow />
               </span>
-               {/* UPDATED: Conditional class for mobile accordion */}
+              
               <ul className={`dropdown-menu ${openDropdown === 'services' ? 'expanded' : ''}`}>
                 <li><Link to="/infrastructure">Instrumentation</Link></li>
                 <li><Link to="/consultancy">Consultancy</Link></li>

@@ -60,7 +60,7 @@ function AnimatedRoutes() {
 }
  
 function App() {
-  // Maine yahan se custom cursor ka useRef, useEffect, aur div हटा दिया है।
+  
  
   return (
     <Router>
@@ -71,7 +71,7 @@ function App() {
       </main>
       <Footer />
       <Whatsapp />
-      {/* Orange cursor wala div yahan se remove kar diya gaya hai */}
+   
     </Router>
   );
 }

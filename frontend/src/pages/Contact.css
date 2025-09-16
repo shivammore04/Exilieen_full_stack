@@ -1,13 +1,9 @@
-/* ==============================================
-   FULLY RESPONSIVE CONTACT PAGE CSS (V2)
-   ============================================== */
 
-/* --- General Styles (Mobile First - 320px+) --- */
 .contact-section {
   background: #050a12;
   color: #f8f9fa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 50px 15px; /* Reduced padding for small screens */
+  padding: 50px 15px; 
   overflow-x: hidden;
 }
 
@@ -18,7 +14,7 @@
 
 .section-title {
   text-align: center;
-  font-size: 2rem; /* Reduced font size for mobile */
+  font-size: 2rem; 
   color: #f99807;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -31,20 +27,17 @@
   color: #ccc;
   max-width: 600px;
   margin: 0 auto 40px auto;
-  font-size: 0.95rem; /* Reduced font size for mobile */
+  font-size: 0.95rem; 
   line-height: 1.6;
 }
 
-/* --- Grid Layout (Mobile First - Single Column) --- */
 .contact-grid-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  /* MODIFIED: 'align-items: start' has been removed. 
-     The default 'stretch' will make both columns equal height. */
+ 
 }
 
-/* --- Left Column: Info & Form --- */
 .contact-info-form {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);

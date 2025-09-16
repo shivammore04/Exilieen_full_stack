@@ -10,7 +10,7 @@ import {
   FaClipboardList
 } from "react-icons/fa";
 
-// Array to hold your new text points
+
 const consultancyPoints = [
   "Our consultancy services will provide you laboratory expertise to fulfill your product compliance as per regulatory norms.",
   "We provide analytical R&D support to establish your product in the global market.",
@@ -31,7 +31,7 @@ const Consultancy = () => {
 
         <div className="consultancy-content" data-aos="fade-up">
           <ul>
-            {/* The placeholder loop is replaced with this new map */}
+          
             {consultancyPoints.map((point, idx) => (
               <li key={idx}>
                 <FaCheckCircle className="check-icon" />
