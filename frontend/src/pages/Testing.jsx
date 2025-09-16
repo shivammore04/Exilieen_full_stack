@@ -5,7 +5,7 @@ import {
   FaClipboardList,
   FaHandshake,
   FaRegClock,
-  FaUserAlt
+  FaUserAlt,
 } from "react-icons/fa";
 
 const Testing = () => {
@@ -13,35 +13,34 @@ const Testing = () => {
     <div className="training-section">
       <div className="training-container">
         <br />
-        <h1 className="section-title">Training Facilities</h1>
+        {/* Title updated here */}
+        <h1 className="section-title">Analytical Facilities</h1>
 
         <div className="training-wrapper">
           <div className="training-left">
-            <h2>Testing</h2>
-            <p>
-              As per requirement of stakeholders, students, researchers and
-              entrepreneurs. We organise pre-designed as well as module-based
-              training programs at our centers with moderate charges.
-            </p>
-
-            <p>Following Training Modules are available:</p>
+            {/* List content replaced here */}
             <ul className="training-list">
-              <li>Training Module On Soil And Water Analysis.</li>
-              <li>Training Module On Food Analysis.</li>
-              <li>Training Module On ICP/OES Operations.</li>
-              <li>Training Module On Handson HPLC Operations.</li>
-              <li>Training Module On Handson GCMS Operations.</li>
-              <li>Training Module On Water and Waste Water Analysis.</li>
-              <li>Training Module On Polluted Air Sample Analysis.</li>
-              <li>Training Module On Microbiology Sample Analysis.</li>
-              <li>Training Module On Quality Control Laboratory Analyst.</li>
+              <li>Soil Analysis.</li>
+              <li>Irrigation Water Analysis.</li>
+              <li>Plant & Leaf Analysis.</li>
+              <li>Fertilizer (Compost & Water Soluble) Analysis.</li>
+              <li>Drinking Water Analysis.(Portable Water).</li>
+              <li>Food Analysis.</li>
+              <li>Microbiological Sample Analysis. (Food Sample).</li>
+              <li>Industrial Water and Waste Water Analysis.</li>
+              <li>Microbiological Sample Analysis. (Water And Waste Water).</li>
+              <li>Ambient Air and Stack Monitoring Analysis.</li>
+              <li>Pesticide Detection.</li>
+              <li>Polymer Sample Analysis.</li>
+              <li>Pharmaceutical Sample Analysis.</li>
+              <li>GMO Analysis.</li>
+              <li>Heavy & Toxic Metal Analysis.</li>
+              <li>Other Tailor made Sample Analysis.</li>
             </ul>
-
-            
           </div>
 
           <div className="training-right">
-            <img src={training} alt="Training Facility" />
+            <img src={training} alt="Analytical Facility" />
           </div>
         </div>
 
