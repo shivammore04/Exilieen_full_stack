@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react"; // Removed unused useEffect import
 import "./Contact.css";
 
 // --- SVG Icons for the new design ---
@@ -29,41 +29,7 @@ const Contact = () => {
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
 
-  useEffect(() => {
-    // Chatbase script loader (your latest version)
-    if (!document.getElementById("tANNUIDsQJsd7DBbPxt_Q")) {
-      const chatbaseScript = document.createElement("script");
-      chatbaseScript.innerHTML = `
-        (function(){
-          if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-            window.chatbase = (...arguments) => {
-              if(!window.chatbase.q) { window.chatbase.q = [] }
-              window.chatbase.q.push(arguments)
-            };
-            window.chatbase = new Proxy(window.chatbase, {
-              get(target, prop) {
-                if(prop === "q") { return target.q }
-                return (...args) => target(prop, ...args)
-              }
-            })
-          }
-          const onLoad = function() {
-            const script = document.createElement("script");
-            script.src = "https://www.chatbase.co/embed.min.js";
-            script.id = "tANNUIDsQJsd7DBbPxt_Q";
-            script.domain = "www.chatbase.co";
-            document.body.appendChild(script);
-          };
-          if(document.readyState === "complete") {
-            onLoad();
-          } else {
-            window.addEventListener("load", onLoad);
-          }
-        })();
-      `;
-      document.body.appendChild(chatbaseScript);
-    }
-  }, []);
+  // --- CHATBOT SCRIPT WAS REMOVED FROM HERE ---
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -184,14 +150,12 @@ const Contact = () => {
 
           {/* Right Column: Map */}
           <div className="contact-map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7505.501431629323!2d75.31550500000002!3d19.850498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1757584686835!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7505.501431629323!2d75.31550500000002!3d19.850498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99b6a8fcc2c1%3A0x828e80fa35facf01!2sExilieen%20Scientific%20Research%20LLP!5e0!3m2!1sen!2sin!4v1757584686835!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         
-        <div className="chatbot-box">
-          <h3>Need Help Instantly?</h3>
-          <p>Chat with our AI Assistant — just tap the chat icon on the bottom right.</p>
-        </div>
+        {/* --- CHATBOT INFO BOX WAS REMOVED FROM HERE --- */}
+
       </div>
     </div>
   );
