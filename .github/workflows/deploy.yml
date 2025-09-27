@@ -1,10 +1,9 @@
-name: Deploy Full Stack App
+name: Deploy to EC2
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:   # 👈 Enables "Run workflow" button
+      - main   # run CI/CD on push to main branch
 
 jobs:
   deploy:
@@ -14,18 +13,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+      - name: Copy code to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "."
+          target: "/home/ubuntu/Exilieen_full_stack"
 
-      - name: Deploy Backend
-        run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "bash -s" < backend/deploy_backend.sh
+      - name: Run deploy script on EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/Exilieen_full_stack/backend
+            npm install
+            pm2 restart exilieen-backend || pm2 start server.js --name exilieen-backend
 
-      - name: Deploy Frontend
-        run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "bash -s" < frontend/deploy_frontend.sh
+            cd /home/ubuntu/Exilieen_full_stack/frontend
+            npm install
+            npm run build
+
+            sudo systemctl reload nginx
+
 
