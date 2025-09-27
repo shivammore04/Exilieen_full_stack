@@ -4,24 +4,28 @@ on:
   push:
     branches:
       - main
-   workflow_dispatch:
-jwobs:
+  workflow_dispatch:   # 👈 Enables "Run workflow" button
+
+jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd ~/Exilieen_full_stack/backend
-            ./deploy_backend.sh
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-            cd ~/Exilieen_full_stack/frontend
-            ./deploy_frontend.sh
+      - name: Deploy Backend
+        run: |
+          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "bash -s" < backend/deploy_backend.sh
+
+      - name: Deploy Frontend
+        run: |
+          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "bash -s" < frontend/deploy_frontend.sh
+
